@@ -1,0 +1,5 @@
+decord==0.6.0
+gradio==5.47.2
+httpx==0.27.0
+huggingface-hub==0.35.1
+torchvision==0.21.0

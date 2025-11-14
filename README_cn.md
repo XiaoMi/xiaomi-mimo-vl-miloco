@@ -1,18 +1,19 @@
 <div align="center">
   <picture>
-    <source srcset="https://github.com/XiaomiMiMo/MiMo-VL/raw/main/figures/Xiaomi_MiMo_darkmode.png?raw=true" media="(prefers-color-scheme: dark)">
-    <img src="./figures/logo.png" width="60%" alt="Xiaomi-MiMo-Vl-Miloco" />
+    <source srcset="https://github.com/XiaoMi/xiaomi-mimo-vl-miloco/blob/main/figures/logo.png?raw=true" media="(prefers-color-scheme: dark)">
+    <img src="https://github.com/XiaoMi/xiaomi-mimo-vl-miloco/blob/main/figures/logo.png?raw=true" width="90%" alt="Xiaomi-MiMo-Vl-Miloco" />
   </picture>
 </div>
+
 
 <br/>
 
 <div align="center" style="line-height: 1;">
-  <a href="https://huggingface.co/xiaomi-open-source/Xiaomi-MiMo-VL-Miloco" target="_blank">🤗 HuggingFace</a>
+  <a href="https://huggingface.co/xiaomi-open-source/Xiaomi-MiMo-VL-Miloco-7B" target="_blank">🤗 HuggingFace</a>
   &nbsp;|
-  <a href="https://modelscope.cn/models/williamljz" target="_blank">🤖️ ModelScope</a>
+  <a href="https://modelscope.cn/models/xiaomi-open-source/Xiaomi-MiMo-VL-Miloco-7B" target="_blank">🤖️ ModelScope</a>
   &nbsp;|
- <a href="#gradio-demo">🔥 Gradio Demo</a>
+ <a href="#gradio部署">🔥 Gradio Demo</a>
   <br/>
 </div>
 
@@ -20,17 +21,17 @@
 
 
 ## 🔥🔥🔥 消息
-* 2025.11.14: 我们开源了[**MiMo-VL-Miloco-7B**](https://huggingface.co/xiaomi-open-source/Xiaomi-MiMo-VL-Miloco) 和它的量化版本[**MiMo-VL-Miloco-7B-GGUF**](https://huggingface.co/williamljz/test2_gguf)。
+* 2025.11.14: 我们开源了[**MiMo-VL-Miloco-7B**](https://huggingface.co/xiaomi-open-source/Xiaomi-MiMo-VL-Miloco-7B) 和它的量化版本[**MiMo-VL-Miloco-7B-GGUF**](https://huggingface.co/xiaomi-open-source/Xiaomi-MiMo-VL-Miloco-7B-GGUF)。
 
 
 
 ## 介绍
 
-欢迎体验MiMo-VL-Miloco-7B开源项目——首个开源的、多模态的家庭场景理解大模型！
+欢迎体验Xiaomi MiMo-VL-Miloco开源项目——首个开源的、多模态的家庭场景理解大模型！
 
 ### 🤗 核心亮点
 - 基于MiMo-VL-7B：强大的视觉-语言基座，具备可靠的视频理解与指令遵循能力。
-- 为家庭场景而设计：能识别日常活动（电子竞技、健身锻炼、看电视、阅读等），并识读常见的手势，如比耶、点赞、张开手掌、OK，甚至666手势。
+- 为家庭场景而设计：能识别日常活动（电子竞技、健身锻炼、看电视、阅读等），并识读常见的手势，如比耶、点赞、张开手掌、OK，甚至比6手势。
 - 通用能力保持：训练策略结合了SFT和RL，MiMo-Vl-Miloco不仅拥有出色家庭场景理解能力，而且在通用任务上依然有较强的竞争力。
 
 ### 🌟 训练笔记
@@ -48,33 +49,41 @@
 
 在监督微调的基础上，我们引入基于GRPO的强化学习算法来提升模型的综合性能:
 
-- 高效的训练数据：我们采用了Time-R1 (已经被NeurIPS 2025接受)的数据策略来构建多domain的高效训练数据。
+- 高效的训练数据：我们采用了[Time-R1](https://arxiv.org/abs/2503.13377) (我们的工作已经被NeurIPS 2025接受）的数据策略来构建多domain的高效训练数据。
 - 通用能力保持：在进行家庭场景专项优化时，维持原有的理解与语言生成能力。
 
-简而言之：MiMo-VL-Miloco 就像你的模范室友——既友善又目光敏锐，擅长识别家中的日常事务，同时依然能适应更广阔的世界。
+简而言之：Xiaomi MiMo-VL-Miloco 就像你的模范室友——既友善又目光敏锐，擅长识别家中的日常事务，同时依然能适应更广阔的世界。
 
 ### 😉 模型指南
 
 模型权重及其量化版本均已开源：
 
-- #### [**MiMo-VL-Miloco-7B**](https://huggingface.co/xiaomi-open-source/Xiaomi-MiMo-VL-Miloco)
-  - 适合绝大多数用户深度体验。  
-- #### [**MiMo-VL-Miloco-7B-GGUF**](https://huggingface.co/williamljz/test2_gguf)
+- #### [**MiMo-VL-Miloco-7B**](https://huggingface.co/xiaomi-open-source/Xiaomi-MiMo-VL-Miloco-7B)
+  - 适合绝大多数用户深度体验。
+  
+- #### [**MiMo-VL-Miloco-7B-GGUF**](https://huggingface.co/xiaomi-open-source/Xiaomi-MiMo-VL-Miloco-7B-GGUF)
   - 混合精度量化版本。适合计算资源受限的场景。
 
 ## 性能表现
 
-### 家庭场景能力评估 (F1 Score)
+### 家庭场景理解能力评估 (F1-Score)
+- MiMo-VL-Miloco-7B无论是在手势识别的场景，还是在常见的家庭场景理解上，都达到了领先水平。
 <div align="center">
   <picture>
-    <img src="figures/radar.png" width="90%" alt="Accuracy & Recall" />
+    <img src="https://github.com/XiaoMi/xiaomi-mimo-vl-miloco/blob/main/figures/radar.png?raw=true" width="90%" alt="Accuracy & Recall" />
   </picture>
 </div>
 
 ### 通用能力评估
+在家庭场景理解下，我们重点关注的是视频、图像感知能力，以及模型的推理能力。
+- 在Video的三个benchmark上（Video-MME/Video-MMMU/Charades-STA）基座能力得到了明显的提升
+- 在通用能力的MMMU-Pro上，基座能力也都得到了显著的提升（10+%）
+- 令人意外的是，随着视频、图像理解能力的提升，纯文本任务MMLU-Pro也取得了一定的提升。
+- 在文档理解、OCR、数学类等任务上出现了一定程度的下降，这在预期之内，对本模型的目标场景没有影响。
+
 <div align="center">
   <picture>
-    <img src="figures/results.png" width="90%" alt="Accuracy & Recall" />
+    <img src="https://github.com/XiaoMi/xiaomi-mimo-vl-miloco/blob/main/figures/results_cn.png?raw=true" width="90%" alt="Accuracy & Recall" />
   </picture>
 </div>
 
@@ -113,6 +122,20 @@ CKPT_PATH="checkpoint_path" python app.py
 您可以在用户界面上点击“智能家居模式”从通用模式切换至家庭场景模式。
 <div align="center">
   <picture>
-    <img src="figures/gradio_demo.png" width="90%" alt="Accuracy & Recall" />
+    <img src="https://github.com/XiaoMi/xiaomi-mimo-vl-miloco/blob/main/figures/gradio_demo_cn.png?raw=true" width="90%" alt="Accuracy & Recall" />
   </picture>
 </div>
+
+## 引用
+
+```bibtex
+@misc{xiaomimimovlmiloco,
+  author       = {Jiaze Li, Yuxun Qu, Jingyang Chen, Shijie Xu, Zhenru Lin, Junyou Zhu, Boshen Xu, Wenhui Tan, Pei Fu, JianZhong Ju, Zhenbo Luo, Jian Luan},
+  title        = {Xiaomi MiMo-VL-Miloco},
+  year         = {2025},
+  howpublished = {\url{https://github.com/XiaoMi/xiaomi-mimo-vl-miloco}},
+}
+```
+
+## 联系方式
+欢迎通过邮箱联系我们：milm-plus@xiaomi.com。如果您有任何问题，可以随时在issue中提问。
