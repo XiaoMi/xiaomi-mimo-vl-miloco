@@ -12,6 +12,8 @@
   &nbsp;|
   <a href="https://modelscope.cn/models/xiaomi-open-source/Xiaomi-MiMo-VL-Miloco-7B" target="_blank">🤖️ ModelScope</a>
   &nbsp;|
+  <a href="https://arxiv.org/abs/2512.17436" target="_blank">📔 Technical Report</a>
+  &nbsp;|
  <a href="#gradio-demo">🔥 Gradio Demo</a>
   <br/>
 </div>
@@ -20,6 +22,9 @@
 
 
 ## 🔥🔥🔥 News
+* 2025.12.22: This is [**Technical Report**](https://arxiv.org/abs/2512.17436). Check it out!
+
+
 * 2025.11.14: We have released the [**MiMo-VL-Miloco-7B**](https://huggingface.co/xiaomi-open-source/Xiaomi-MiMo-VL-Miloco-7B) and [**MiMo-VL-Miloco-7B-GGUF**](https://huggingface.co/xiaomi-open-source/Xiaomi-MiMo-VL-Miloco-7B-GGUF). Enjoy it!
 
 
