@@ -134,10 +134,13 @@ CKPT_PATH="checkpoint_path" python app.py
 
 ```bibtex
 @misc{xiaomimimovlmiloco,
-  author       = {Jiaze Li, Yuxun Qu, Jingyang Chen, Shijie Xu, Zhenru Lin, Junyou Zhu, Boshen Xu, Wenhui Tan, Pei Fu, JianZhong Ju, Zhenbo Luo, Jian Luan},
-  title        = {Xiaomi MiMo-VL-Miloco},
-  year         = {2025},
-  howpublished = {\url{https://github.com/XiaoMi/xiaomi-mimo-vl-miloco}},
+      title={Xiaomi MiMo-VL-Miloco Technical Report}, 
+      author={Jiaze Li, Jingyang Chen, Yuxun Qu, Shijie Xu, Zhenru Lin, Junyou Zhu, Boshen Xu, Wenhui Tan, Pei Fu, Jianzhong Ju, Zhenbo Luo, Jian Luan},
+      year={2025},
+      eprint={2512.17436},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2512.17436}, 
 }
 ```
 
